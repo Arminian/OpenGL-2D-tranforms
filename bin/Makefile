@@ -1,0 +1,2 @@
+all:
+	g++ -g --std=c++17 -I../include -L../lib ../src/main.cpp ../src/glad.c -o main -static -Wl,-Bstatic,--whole-archive ../lib/libglfw3.a -lwinpthread -Wl,--no-whole-archive -lopengl32 -lgdi32 -luser32

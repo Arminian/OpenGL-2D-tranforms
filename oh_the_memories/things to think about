@@ -1,0 +1,23 @@
+from the getIntoGameDev tutorial for 4.4 openGL
+
+// vertex shader pipeline: calculate the position of vertices
+const char* vertexShaderSource = "#version 330 core\n"
+    "#extension GL_ARB_separate_shader_objects : enable\n" 
+    "layout (location = 0) in vec3 vertexPosition;\n"
+    "layout (location = 1) in vec3 vertexColor;\n"
+    "layout (location = 0) out vec3 fragmentColor;\n"
+    "void main()\n"
+    "{\n"
+    "   gl_Position = vec4 (vertexPosition, 1.0);\n"
+    "   fragmentColor = vertexColor;\n"
+    "}\0";
+
+// fragment shader pipeline: calculate the output color
+const char* fragmentShaderSource = "#version 330 core\n"
+    "#extension GL_ARB_separate_shader_objects : enable\n" 
+    "layout (location = 0) in vec3 fragmentColor;\n"
+    "out vec4 finalColor;\n"
+    "void main()\n"
+    "{\n"
+    "   finalColor = vec4 (fragmentColor, 1.0);\n"
+    "}\0";
